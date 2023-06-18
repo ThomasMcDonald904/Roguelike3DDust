@@ -1,0 +1,13 @@
+2a60927148abd1d33b818b535e306557
+::res://::1687050590
+icon.svg::CompressedTexture2D::80918363907396525::1686518807::1686518813::1::::<><>::
+player.gd::GDScript::-1::1686544771::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::8085950904827768513::1686544771::0::1::::<><>::res://player.gd
+rooms.glb::PackedScene::7775737037323192285::1686522427::1686522427::1::::<><>::
+RoomSpawner.gd::GDScript::-1::1686542347::0::1::::<>Node3D<>::
+world.tscn::PackedScene::3102008252193144481::1686544771::0::1::::<><>::res://RoomSpawner.gd<>uid://dng5ovd58cokv
+::res://Rooms/::1686544771
+four_sides.tscn::PackedScene::7697303419454870560::1686544771::0::1::::<><>::
+one_door.tscn::PackedScene::5429922523002170382::1686544771::0::1::::<><>::
+opposite_doors.tscn::PackedScene::7525991664148208628::1686544771::0::1::::<><>::
+two_doors.tscn::PackedScene::514477691426342296::1686544771::0::1::::<><>::
