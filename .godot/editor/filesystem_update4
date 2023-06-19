@@ -1,8 +1,7 @@
 res://world.tscn
+res://RoomSpawner.gd
 res://Rooms/one_door.tscn
 res://Rooms/opposite_doors.tscn
 res://Rooms/two_doors.tscn
 res://Rooms/four_sides.tscn
 res://player.tscn
-res://RoomSpawner.gd
-res://player.gd

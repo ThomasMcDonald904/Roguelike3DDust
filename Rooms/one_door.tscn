@@ -72,7 +72,7 @@ size = Vector3(3.60695, 0.068213, 3.92284)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pnl8p"]
 size = Vector3(0.1, 1.99802, 3.56583)
 
-[node name="OneDoor" type="StaticBody3D"]
+[node name="OneDoor" type="StaticBody3D" groups=["endcap"]]
 
 [node name="OneDoor" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 0.191806, 0, 0, 0, 2, 0, 0, 0)

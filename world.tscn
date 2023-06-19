@@ -10,3 +10,7 @@ script = ExtResource("1_lmgde")
 
 [node name="Player" parent="." instance=ExtResource("2_u4rf6")]
 transform = Transform3D(-0.99863, 0, -0.052336, 0, 1, 0, 0.052336, 0, -0.99863, 0, 1.01504, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0895723, 0.99598, 0, -0.99598, -0.0895723, 0, 20.4668, 1.29087)
+fov = 96.2
