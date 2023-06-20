@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkgvvf31q7yd2"]
+[gd_scene load_steps=4 format=3 uid="uid://bkgvvf31q7yd2"]
 
 [ext_resource type="Script" path="res://RoomSpawner.gd" id="1_lmgde"]
 [ext_resource type="PackedScene" uid="uid://dng5ovd58cokv" path="res://player.tscn" id="2_u4rf6"]
+[ext_resource type="PackedScene" uid="uid://bb4nr2f2psvq4" path="res://room_cache.tscn" id="3_k6uph"]
 
 [node name="World" type="Node"]
 
@@ -9,8 +10,10 @@
 script = ExtResource("1_lmgde")
 
 [node name="Player" parent="." instance=ExtResource("2_u4rf6")]
-transform = Transform3D(-0.99863, 0, -0.052336, 0, 1, 0, 0.052336, 0, -0.99863, 0, 1.01504, 0)
+transform = Transform3D(-0.99863, 0, -0.052336, 0, 1, 0, 0.052336, 0, -0.99863, 0, 1.45475, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0895723, 0.99598, 0, -0.99598, -0.0895723, 0, 20.4668, 1.29087)
+transform = Transform3D(-0.998373, 0.0195661, -0.0535595, -0.0518723, 0.078417, 0.99557, 0.0236794, 0.996729, -0.0772745, 0, 13.0915, -0.196643)
 fov = 96.2
+
+[node name="RoomCache" parent="." instance=ExtResource("3_k6uph")]

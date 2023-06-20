@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://hlhmwrjdxu1m"]
+[gd_scene load_steps=7 format=3 uid="uid://lyhrwsojj43c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1imj"]
 resource_name = "Material.001"
@@ -72,7 +72,7 @@ size = Vector3(3.60695, 0.068213, 3.92284)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hqtd5"]
 size = Vector3(0.1, 1.99802, 3.56583)
 
-[node name="TwoDoors" type="StaticBody3D"]
+[node name="TwoDoors" type="StaticBody3D" groups=["DoorF", "DoorR", "WallB", "WallL"]]
 
 [node name="TwoDoors" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 0.191806, 0, 0, 0, 2, 0, 0, 0)

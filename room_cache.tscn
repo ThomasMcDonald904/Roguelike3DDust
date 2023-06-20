@@ -1,0 +1,64 @@
+[gd_scene load_steps=16 format=3 uid="uid://bb4nr2f2psvq4"]
+
+[ext_resource type="PackedScene" uid="uid://ce6ul23h042it" path="res://Rooms/IsomorphicOneDoors/OneDoorB.tscn" id="1_0xjc1"]
+[ext_resource type="PackedScene" uid="uid://cjmkbbn77wsru" path="res://Rooms/IsomorphicOneDoors/OneDoorF.tscn" id="2_xa0bj"]
+[ext_resource type="PackedScene" uid="uid://d03k05dj6qpu2" path="res://Rooms/IsomorphicOneDoors/OneDoorL.tscn" id="3_jkh30"]
+[ext_resource type="PackedScene" uid="uid://dhcy2j4kk6ml" path="res://Rooms/IsomorphicOneDoors/OneDoorR.tscn" id="4_iodd3"]
+[ext_resource type="PackedScene" uid="uid://dfhv8orvh75bk" path="res://Rooms/IsomorphicOppositeDoor/OppositeDoorsFB.tscn" id="5_dq2ub"]
+[ext_resource type="PackedScene" uid="uid://cerw5p856sime" path="res://Rooms/IsomorphicOppositeDoor/OppositeDoorsLR.tscn" id="6_yd061"]
+[ext_resource type="PackedScene" uid="uid://dx505wxaqg8b" path="res://Rooms/IsomorphicThreeDoors/ThreeDoorsBLF.tscn" id="7_e50tm"]
+[ext_resource type="PackedScene" uid="uid://clg4i7tgqp0fn" path="res://Rooms/IsomorphicThreeDoors/ThreeDoorsFRB.tscn" id="8_1j1es"]
+[ext_resource type="PackedScene" uid="uid://b04dklbcqfipv" path="res://Rooms/IsomorphicThreeDoors/ThreeDoorsLFR.tscn" id="9_dqclr"]
+[ext_resource type="PackedScene" uid="uid://u6d5qh26yqob" path="res://Rooms/IsomorphicThreeDoors/ThreeDoorsRBL.tscn" id="10_xoyhv"]
+[ext_resource type="PackedScene" uid="uid://dn8sdy4ug6g53" path="res://Rooms/IsomorphicTwoDoors/TwoDoorsBL.tscn" id="11_p53a4"]
+[ext_resource type="PackedScene" uid="uid://cajhrp4rjomx0" path="res://Rooms/IsomorphicTwoDoors/TwoDoorsBR.tscn" id="12_r7e70"]
+[ext_resource type="PackedScene" uid="uid://hlhmwrjdxu1m" path="res://Rooms/IsomorphicTwoDoors/TwoDoorsFL.tscn" id="13_1avea"]
+[ext_resource type="PackedScene" uid="uid://lyhrwsojj43c" path="res://Rooms/IsomorphicTwoDoors/TwoDoorsFR.tscn" id="14_l81mf"]
+[ext_resource type="PackedScene" uid="uid://dhwvpy6crk43u" path="res://Rooms/FourSides.tscn" id="15_kck25"]
+
+[node name="RoomCache" type="Node3D"]
+
+[node name="OneDoorF" parent="." instance=ExtResource("1_0xjc1")]
+visible = false
+
+[node name="OneDoorF2" parent="." instance=ExtResource("2_xa0bj")]
+visible = false
+
+[node name="OneDoorF3" parent="." instance=ExtResource("3_jkh30")]
+visible = false
+
+[node name="OneDoorF4" parent="." instance=ExtResource("4_iodd3")]
+visible = false
+
+[node name="OppositeDoorsFB" parent="." instance=ExtResource("5_dq2ub")]
+visible = false
+
+[node name="OppositeDoorsLR" parent="." instance=ExtResource("6_yd061")]
+visible = false
+
+[node name="ThreeDoorsBLF" parent="." instance=ExtResource("7_e50tm")]
+visible = false
+
+[node name="ThreeDoorsFRB" parent="." instance=ExtResource("8_1j1es")]
+visible = false
+
+[node name="ThreeDoorsLFR" parent="." instance=ExtResource("9_dqclr")]
+visible = false
+
+[node name="ThreeDoorsRBL" parent="." instance=ExtResource("10_xoyhv")]
+visible = false
+
+[node name="TwoDoorsBL" parent="." instance=ExtResource("11_p53a4")]
+visible = false
+
+[node name="TwoDoorsBR" parent="." instance=ExtResource("12_r7e70")]
+visible = false
+
+[node name="TwoDoors" parent="." instance=ExtResource("13_1avea")]
+visible = false
+
+[node name="TwoDoors2" parent="." instance=ExtResource("14_l81mf")]
+visible = false
+
+[node name="FourSides" parent="." instance=ExtResource("15_kck25")]
+visible = false

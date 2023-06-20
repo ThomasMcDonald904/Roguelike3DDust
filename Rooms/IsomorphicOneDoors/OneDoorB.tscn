@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjmkbbn77wsru"]
+[gd_scene load_steps=7 format=3 uid="uid://ce6ul23h042it"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1imj"]
 resource_name = "Material.001"
@@ -72,38 +72,39 @@ size = Vector3(3.60695, 0.068213, 3.92284)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pnl8p"]
 size = Vector3(0.1, 1.99802, 3.56583)
 
-[node name="OneDoor" type="StaticBody3D" groups=["endcap"]]
+[node name="OneDoorF" type="StaticBody3D" groups=["DoorB", "WallF", "WallL", "WallR"]]
 
 [node name="OneDoor" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 0.191806, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 0.191806, 0, 1.74846e-07, 0, -2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pfgur")
 skeleton = NodePath("")
 
 [node name="DoorPositions" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="DoorPosition" type="Node3D" parent="DoorPositions"]
 transform = Transform3D(2, 0, 0, 0, 0.191806, 0, 0, 0, 2, 0, 0.191806, 1.99599)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.04088, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124263, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.124263, 0)
 shape = SubResource("BoxShape3D_4vp4g")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84866, 1.19502, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.84866, 1.19502, 1.61615e-07)
 shape = SubResource("BoxShape3D_pnl8p")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83973, 1.19502, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.83973, 1.19502, -1.60834e-07)
 shape = SubResource("BoxShape3D_pnl8p")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0140505, 1.19502, -1.7949)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.0140507, 1.19502, 1.7949)
 shape = SubResource("BoxShape3D_pnl8p")
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.04158)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.78481e-07, 0, -2.04158)
 depth = 0.1
 polygon = PackedVector2Array(1.99174, 0.144161, 0.666762, 0.20378, 0.679617, 1.16737, -0.662752, 1.18607, -0.660356, 0.194286, -1.99096, 0.185173, -1.99552, 2.13095, 1.99174, 2.09905)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04088, 0)
