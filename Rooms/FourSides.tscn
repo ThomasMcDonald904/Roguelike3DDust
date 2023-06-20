@@ -69,7 +69,7 @@ shadow_mesh = SubResource("ArrayMesh_xsvqp")
 margin = 0.0
 size = Vector3(3.60695, 0.068213, 3.92284)
 
-[node name="FourSides" type="StaticBody3D"]
+[node name="FourSides" type="StaticBody3D" groups=["DoorB", "DoorF", "DoorL", "DoorR"]]
 
 [node name="FourSides" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 0.191806, 0, 0, 0, 2, 0, 0, 0)

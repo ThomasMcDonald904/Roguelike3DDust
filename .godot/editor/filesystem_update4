@@ -23,3 +23,7 @@ res://Rooms/IsomorphicThreeDoors/three_door_frb.tscn
 res://Rooms/IsomorphicThreeDoors/three_door_blf.tscn
 res://Rooms/IsomorphicThreeDoors/three_door_rbl.tscn
 res://room_cache.tscn
+res://Rooms/FourSides.tscn
+res://Rooms/IsomorphicOneDoors/OneDoorB.tscn
+res://BaseRoom.gd
+res://Room.gd

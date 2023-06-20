@@ -3,14 +3,13 @@ extends Node3D
 const MAX_ROOM_SPAWN = 6
 
 func _ready():
-    var set1 = get_tree().get_nodes_in_group("DoorF")
-    var set2 = get_tree().get_nodes_in_group("WallB")
-    var set3 = get_tree().get_nodes_in_group("WallR")
-    var set4 = get_tree().get_nodes_in_group("WallL")
-    var intersection = intersect_arrays(set1, set2, set3, set4)
-    var room_to_spawn = intersection[0].duplicate()
-    room_to_spawn.visible = true
-    add_child(room_to_spawn)
+#    var set1 = get_tree().get_nodes_in_group("DoorF")
+#    var set2 = get_tree().get_nodes_in_group("WallB")
+#    var set3 = get_tree().get_nodes_in_group("WallR")
+#    var set4 = get_tree().get_nodes_in_group("WallL")
+#    var intersection = intersect_arrays(set1, set2, set3, set4)
+#    var room_to_spawn = intersection[0].duplicate()
+    $"../RoomCache".get_children().pick_random()
 
 func _process(delta):
     if Input.is_key_pressed(KEY_SPACE):
