@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfhv8orvh75bk"]
+[gd_scene load_steps=8 format=3 uid="uid://dfhv8orvh75bk"]
+
+[ext_resource type="Script" path="res://Scripts/Room.gd" id="1_7efg2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1imj"]
 resource_name = "Material.001"
@@ -73,8 +75,9 @@ size = Vector3(3.60695, 0.068213, 3.92284)
 size = Vector3(0.1, 1.99802, 3.56583)
 
 [node name="OppositeDoorsFB" type="StaticBody3D" groups=["DoorB", "DoorF", "WallL", "WallR"]]
+script = ExtResource("1_7efg2")
 
-[node name="OppositeDoors" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 0.191806, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vgxxk")
 skeleton = NodePath("")

@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://clg4i7tgqp0fn"]
+[gd_scene load_steps=8 format=3 uid="uid://clg4i7tgqp0fn"]
+
+[ext_resource type="Script" path="res://Scripts/Room.gd" id="1_n8s1t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yo6c6"]
 resource_name = "Material.001"
@@ -73,8 +75,9 @@ margin = 0.0
 size = Vector3(3.60695, 0.068213, 3.92284)
 
 [node name="ThreeDoorsFRB" type="StaticBody3D" groups=["DoorB", "DoorF", "DoorR", "WallL"]]
+script = ExtResource("1_n8s1t")
 
-[node name="ThreeDoors" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 0.191806, 0, 2, 0, -8.74228e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_g5i1h")
 skeleton = NodePath("")

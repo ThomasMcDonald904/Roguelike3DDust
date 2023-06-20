@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dsi60iramcbiq"
-path="res://.godot/imported/3DoorRoom.glb-04d78d110222d981f12c8804c8dd7455.scn"
+path="res://.godot/imported/3DoorRoom.glb-caaf2873493f31e5a6015ca2f6644b7e.scn"
 
 [deps]
 
-source_file="res://3DoorRoom.glb"
-dest_files=["res://.godot/imported/3DoorRoom.glb-04d78d110222d981f12c8804c8dd7455.scn"]
+source_file="res://Assets/3DoorRoom.glb"
+dest_files=["res://.godot/imported/3DoorRoom.glb-caaf2873493f31e5a6015ca2f6644b7e.scn"]
 
 [params]
 

@@ -4,34 +4,32 @@ class_name Room
 
 var grid_position = Vector2(0, 0)
 
-# Individual rooms must define what each of these sides are with either: "Wall" or "Door"
-var right_side
-var left_side
-var back
-var front
+func _ready():
+    if get_parent().name != "RoomCache":
+        visible = true
 
-# Should use sides enum
 func get_side_type(side: String) -> String:
     match side:
-        "right_side":
-            return right_side
-        "left_side":
-            return left_side
+        "right":
+            return "Wall" if "WallR" in get_groups() else "Door"
+        "left":
+            return "Wall" if "WallL" in get_groups() else "Door"
         "back":
-            return back
+            return "Wall" if "WallB" in get_groups() else "Door"
         "front":
-            return front
+            return "Wall" if "WallF" in get_groups() else "Door"
         _:
-            assert(side in ["right_side", "left_side", "front", "back"], "Given side to get type not part of permited sides")
+            assert(side in ["right", "left", "front", "back"], "Given side to get type not part of permited sides")
             return "Error"
 
-func set_grid_position(grid_position: Vector2):
-    grid_position = grid_position
+func set_grid_position(grid: Grid, _grid_position: Vector2):
+    grid.set_position_in_grid(_grid_position, self)
+    grid_position = _grid_position
 
 func get_grid_position():
     return grid_position
 
-func get_accessible_neighbors() -> Array[Vector2]:
+func get_accessible_neighbors() -> Array:
     var neighbor_grid_positions = []
     for door in get_node("DoorPositions").get_children():
         match int(door.rotation_degrees.y):
