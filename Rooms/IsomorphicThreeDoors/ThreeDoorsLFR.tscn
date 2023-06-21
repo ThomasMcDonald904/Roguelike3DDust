@@ -74,7 +74,7 @@ size = Vector3(0.1, 1.99802, 3.84651)
 margin = 0.0
 size = Vector3(3.60695, 0.068213, 3.92284)
 
-[node name="ThreeDoorsLFR" type="StaticBody3D" groups=["DoorF", "DoorL", "DoorR"]]
+[node name="ThreeDoorsLFR" type="StaticBody3D" groups=["DoorF", "DoorL", "DoorR", "WallB"]]
 script = ExtResource("1_dl1tb")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]

@@ -117,5 +117,5 @@ polygon = PackedVector2Array(1.99174, 0.144161, 0.666762, 0.20378, 0.679617, 1.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04088, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124263, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.146827, 0)
 shape = SubResource("BoxShape3D_n37kx")
