@@ -12,3 +12,7 @@ res://Rooms/IsomorphicThreeDoors/ThreeDoorsBLF.tscn
 res://Rooms/IsomorphicTwoDoors/TwoDoorsFR.tscn
 res://Rooms/IsomorphicThreeDoors/ThreeDoorsLFR.tscn
 res://Rooms/FourSides.tscn
+res://Rooms/IsomorphicOppositeDoor/OppositeDoorsLR.tscn
+res://Rooms/IsomorphicTwoDoors/TwoDoorsFL.tscn
+res://Rooms/IsomorphicTwoDoors/TwoDoorsBR.tscn
+res://Rooms/IsomorphicThreeDoors/ThreeDoorsFRB.tscn

@@ -1,8 +1,8 @@
 extends Node3D
 
-const MAX_ROOM_SPAWN = 6
-
+const MAX_ROOM_SPAWN = 50
 var grid: Grid = Grid.new(20, 20)
+
 
 var side_directions = {
 	"front": Vector2(0, 1),
@@ -12,36 +12,48 @@ var side_directions = {
 }
 
 func _ready():
-	var initial_room: Room = $"../RoomCache".get_children().pick_random().duplicate()
-	initial_room.set_grid_position(grid, Vector2(0, 0))
-	print(initial_room.get_accessible_neighbors())
-	for valid_neighbor_position in initial_room.get_accessible_neighbors():
-		var debug_list = []
-		var sets = []
-		for direction in side_directions:
-			var side_type_check_room: Room = grid.get_room_at_position(side_directions[direction] + valid_neighbor_position)
-			if side_type_check_room == null:
-				var type_choice = ["Wall", "Door"].pick_random()
-				debug_list.append([type_choice, direction])
-				sets.append(create_set_for_direction(type_choice, direction))
-			else:
-				debug_list.append([side_type_check_room, direction])
-				sets.append(create_set_for_direction_and_room(direction, side_type_check_room))
-		var possible_rooms = intersect_arrays(sets[0], sets[1], sets[2], sets[3])
-#			print("-> ", sets[0], "\n", "-> ", sets[1], "\n", "-> ", sets[2], "\n", "-> ", sets[3], "\n")
-#			print(possible_rooms)
-		print(valid_neighbor_position, " ", debug_list)
-		var chosen_room: Room = possible_rooms.pick_random()
-		var to_add = chosen_room.duplicate()
-		to_add.set_grid_position(grid, valid_neighbor_position)
-	print("\n", "-----------------", "\n")
-	grid.spawn_grid(self)
+	while get_child_count() < MAX_ROOM_SPAWN:
+		grid.clear_grid()
+		for child in get_children():
+			child.queue_free()
+		print("trying")
+		var initial_room: Room = pick_random_with_bias($"../RoomCache".get_children()).duplicate()
+		initial_room.set_grid_position(grid, Vector2(0, 0))
+		var rooms_to_spawn = [initial_room]
+		var spawn_counter = 0
+		for room_to_generate in rooms_to_spawn:
+			for valid_neighbor_position in room_to_generate.get_accessible_neighbors():
+				if grid.get_room_at_position(valid_neighbor_position) == null:
+					if grid.get_room_at_position(valid_neighbor_position) != false:
+						var sets = []
+						for direction in side_directions:
+							var side_type_check_room: Room = grid.get_room_at_position(side_directions[direction] + valid_neighbor_position)
+							if side_type_check_room == null:
+								var type_choice = ["Wall", "Door"].pick_random()
+								sets.append(create_set_for_direction(type_choice, direction))
+							else:
+								sets.append(create_set_for_direction_and_room(direction, side_type_check_room))
+						var possible_rooms = intersect_arrays(sets[0], sets[1], sets[2], sets[3])
+						var chosen_room = pick_random_with_bias(possible_rooms).duplicate()
+						chosen_room.set_grid_position(grid, valid_neighbor_position)
+						spawn_counter += 1
+						rooms_to_spawn.append(chosen_room)
+			if spawn_counter >= MAX_ROOM_SPAWN:
+				break
+		grid.spawn_grid(self)
 	$"../RoomCache".queue_free()
-	
+
 
 func _process(_delta):
 	if Input.is_action_just_released("DebugKey"):
 		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("DebugSwapCameras"):
+		var cameras = get_tree().get_nodes_in_group("Cameras")
+		var current_cam_index = cameras.find(get_viewport().get_camera_3d())
+		if current_cam_index + 1 >= cameras.size():
+			cameras[0].make_current()
+		else:
+			cameras[current_cam_index + 1].make_current()
 
 
 
@@ -103,6 +115,15 @@ func create_set_for_direction_and_room(direction: String, room_to_check: Room):
 		"front":
 			var side_type = room_to_check.get_side_type("back")
 			return create_set_for_direction(side_type, "front")
+
+func pick_random_with_bias(elements: Array) -> Room:
+	var weighted_elements = []
+	
+	for element in elements:
+		for i in range(element.get_generation_weight()):
+			weighted_elements.append(element)
+	
+	return weighted_elements.pick_random()
 
 
 #func spawnRoomToDoor(room, room_door_index: int, mother_room, mother_room_door_index: int):

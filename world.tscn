@@ -12,8 +12,12 @@ script = ExtResource("1_0avpl")
 [node name="Player" parent="." instance=ExtResource("2_u4rf6")]
 transform = Transform3D(-0.99863, 0, -0.052336, 0, 1, 0, 0.052336, 0, -0.99863, 0, 1.45475, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." groups=["Cameras"]]
 transform = Transform3D(0.8479, -0.112061, 0.518177, 0.00859209, 0.980182, 0.197915, -0.530086, -0.16336, 0.832059, 7.95607, 13.0915, 12.2726)
+current = true
 fov = 96.2
 
 [node name="RoomCache" parent="." instance=ExtResource("3_k6uph")]
+
+[node name="Camera3D2" type="Camera3D" parent="." groups=["Cameras"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 39.4782, 0)

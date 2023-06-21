@@ -76,6 +76,7 @@ size = Vector3(0.1, 1.99802, 3.56583)
 
 [node name="OppositeDoorsLR" type="StaticBody3D" groups=["DoorL", "DoorR", "WallB", "WallF"]]
 script = ExtResource("1_wvl4n")
+generationWeight = 4
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 0.191806, 0, 2, 0, -8.74228e-08, 0, 0, 0)

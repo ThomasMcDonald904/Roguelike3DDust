@@ -22,6 +22,11 @@ func _init(_x_size: int, _y_size: int):
 			row_buffer.append(null)
 		grid.append(row_buffer)
 
+func clear_grid():
+	for row in grid:
+		for item in row:
+			item = null
+
 func set_position_in_grid(grid_position: Vector2, room: Room):
 	# Returns false if couldn't place room because: Reached boundaries or room already there 
 	var translatedX = grid_position.x + centerX
@@ -38,6 +43,10 @@ func set_position_in_grid(grid_position: Vector2, room: Room):
 func get_room_at_position(grid_position: Vector2):
 	var translatedX = grid_position.x + centerX
 	var translatedY = grid_position.y * -1 + centerY
+	
+	if translatedX + 1 >= x_size or translatedY + 1 >= y_size:
+		return false
+	
 	return grid[translatedY][translatedX]
 
 func get_grid():
@@ -49,6 +58,8 @@ func spawn_grid(container: Node):
 			if item != null:
 				var world_position_x = item.get_grid_position().x * item.get_node("Mesh").scale.x * 2
 				var world_position_y = item.get_grid_position().y * item.get_node("Mesh").scale.z * 2
-				item.set_global_position(Vector3(world_position_x, 0, world_position_y))
+				container.remove_child(item)
 				container.add_child(item)
+				item.set_global_position(Vector3(world_position_x, 0, world_position_y))
+				item.visible = true
 				

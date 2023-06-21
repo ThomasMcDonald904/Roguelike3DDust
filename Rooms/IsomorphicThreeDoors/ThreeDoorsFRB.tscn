@@ -76,6 +76,7 @@ size = Vector3(3.60695, 0.068213, 3.92284)
 
 [node name="ThreeDoorsFRB" type="StaticBody3D" groups=["DoorB", "DoorF", "DoorR", "WallL"]]
 script = ExtResource("1_n8s1t")
+generationWeight = 4
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 0.191806, 0, 2, 0, -8.74228e-08, 0, 0, 0)

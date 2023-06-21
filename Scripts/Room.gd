@@ -4,9 +4,12 @@ class_name Room
 
 var grid_position = Vector2(0, 0)
 
+@export_range(1, 4) var generationWeight = 1 
+
 func _ready():
-	if get_parent().name != "RoomCache":
-		visible = true
+#	if get_parent().name != "RoomCache":
+#		visible = true
+	pass
 
 func get_side_type(side: String) -> String:
 	match side:
@@ -43,4 +46,7 @@ func get_accessible_neighbors() -> Array:
 			"DoorB":
 				neighbor_grid_positions.append(get_grid_position() + Vector2(0, -1))
 	return neighbor_grid_positions
+
+func get_generation_weight():
+	return generationWeight
 

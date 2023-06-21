@@ -76,6 +76,7 @@ size = Vector3(0.1, 1.99802, 3.56583)
 
 [node name="TwoDoorsBL" type="StaticBody3D" groups=["DoorB", "DoorL", "WallF", "WallR"]]
 script = ExtResource("1_gha1v")
+generationWeight = 3
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2, 0, 1.74846e-07, 0, 0.191806, 0, -1.74846e-07, 0, -2, 0, 0, 0)
